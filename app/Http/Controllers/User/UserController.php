@@ -54,6 +54,7 @@ class UserController extends Controller
             'age' => $data[$key]['age'],
             'course' => $data[$key]['course'],
             'faculty_id' => $data[$key]['faculty'],
+            'about' => $data[$key]['about'],
             'telegramID' => $key,
         ]);
 
@@ -112,6 +113,7 @@ class UserController extends Controller
             'age' => $data[$key]['age'],
             'course' => $data[$key]['course'],
             'faculty_id' => $data[$key]['faculty'],
+            'about' => $data[$key]['about'],
         ]);
 
         // Оновлюємо інтереси користувача (через зв'язок багато-до-багатьох)

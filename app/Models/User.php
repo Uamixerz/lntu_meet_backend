@@ -11,7 +11,7 @@ class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
-    protected $fillable = ['name', 'age', 'course', 'faculty_id', 'telegramID'];
+    protected $fillable = ['name', 'age', 'course', 'faculty_id', 'telegramID', 'about'];
 
     // Визначаємо зв'язок багато-до-багатьох
     public function interests()

@@ -19,6 +19,7 @@ class UserResource extends JsonResource
             'name' => $this->name,
             'telegramID' => $this->telegramID,
             'images' => $this->images->pluck('image_path'),
+            'about' => $this->about,
         ];
     }
 }
