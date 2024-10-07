@@ -27,10 +27,11 @@ class StoreRequest extends FormRequest
             "$key.age" => 'required|integer|min:1|max:150',
             "$key.course" => 'required|integer|min:1|max:5',
             "$key.faculty" => 'required|integer|exists:faculties,id',
-            "$key.interest" => 'required|array', // Валідуємо як масив
+            "$key.interest" => 'array', // Валідуємо як масив
             "$key.interest.*" => 'integer|exists:interests,id', // Кожен елемент масиву має бути інтересом
             "$key.name" => 'required|string|max:255',
             "$key.about" => 'required|string|max:255',
+            "$key.phone" => 'required|string|max:30',
         ];
     }
 

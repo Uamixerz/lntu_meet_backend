@@ -55,11 +55,12 @@ class UserController extends Controller
             'course' => $data[$key]['course'],
             'faculty_id' => $data[$key]['faculty'],
             'about' => $data[$key]['about'],
+            'phone' => $data[$key]['phone'],
             'telegramID' => $key,
         ]);
 
         // Прив'язка інтересів до користувача через зв'язок багато-до-багатьох
-        $user->interests()->sync($data[$key]['interest']); // Використовуємо sync() для заміни поточних зв'язків
+        $user->interests()->sync($data[$key]['interest']??[]); // Використовуємо sync() для заміни поточних зв'язків
 
         // Відповідь з успішним результатом
         return response()->json([
@@ -113,6 +114,7 @@ class UserController extends Controller
             'age' => $data[$key]['age'],
             'course' => $data[$key]['course'],
             'faculty_id' => $data[$key]['faculty'],
+            'phone' => $data[$key]['phone'],
             'about' => $data[$key]['about'],
         ]);
 
