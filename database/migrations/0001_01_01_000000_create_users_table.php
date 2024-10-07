@@ -15,6 +15,8 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('age');
+            $table->string('about');
+            $table->string('phone');
             $table->integer('course')->index();
             $table->unsignedBigInteger('telegramID')->unique();
             $table->timestamps();

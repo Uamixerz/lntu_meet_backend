@@ -36,6 +36,7 @@ return new class extends Migration
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('faculty_id')->index();
             $table->foreign('faculty_id')->references('id')->on('faculties')->onDelete('cascade');
+
         });
     }
 
@@ -52,9 +53,5 @@ return new class extends Migration
         Schema::dropIfExists('interests_users');
         Schema::dropIfExists('interests');
         Schema::dropIfExists('faculties');
-
-
-
-
     }
 };
