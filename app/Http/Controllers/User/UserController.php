@@ -8,6 +8,7 @@ use App\Http\Resources\user\UserResource;
 use App\Models\Images;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
 {
@@ -58,7 +59,6 @@ class UserController extends Controller
             'phone' => $data[$key]['phone'],
             'telegramID' => $key,
         ]);
-
         // Прив'язка інтересів до користувача через зв'язок багато-до-багатьох
         $user->interests()->sync($data[$key]['interest']??[]); // Використовуємо sync() для заміни поточних зв'язків
 
