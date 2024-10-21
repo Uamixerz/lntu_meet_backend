@@ -28,7 +28,7 @@ class UserController extends Controller
         }
 
         // Якщо інтереси вказано, додаємо фільтр по інтересам
-        if (!empty($interests)) {
+        if (!empty($interests) && $interests[0] !== 0) {
             $query->whereHas('interests', function($q) use ($interests) {
                 $q->whereIn('interests.id', $interests);
             });
