@@ -38,7 +38,7 @@ class UserController extends Controller
             $query->whereNotIn('telegramID', $shownUserIds);
         }
 
-        $users = $query->paginate(10);
+        $users = $query->inRandomOrder()->paginate(10);
 
         // Повертаємо результат
         return UserResource::collection($users);
